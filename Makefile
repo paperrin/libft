@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2016/11/17 15:17:02 by paperrin         ###   ########.fr        #
+#    Updated: 2016/11/25 17:03:06 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ CFILES		=	ft_swap.c			\
 				ft_lstat.c			\
 				ft_lstpush.c		\
 				ft_get_next_line.c	\
-				ft_sqrt.c
+				ft_sqrt.c			\
+				ft_hash_string.c
 
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
 
