@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_wstrdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 13:50:20 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/26 19:18:28 by paperrin         ###   ########.fr       */
+/*   Created: 2016/11/26 19:42:54 by paperrin          #+#    #+#             */
+/*   Updated: 2016/11/26 19:43:43 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+#include <wchar.h>
 
-void	ft_putstr(char const *s)
+wchar_t		*ft_wstrdup(const wchar_t *s1)
 {
-	ft_putstr_fd(s, 1);
+	wchar_t	 *dst;
+
+	dst = (wchar_t*)malloc(sizeof(wchar_t) * ft_wstrlen(s1) + 1);
+	if (dst)
+		dst = ft_wstrcpy(dst, s1);
+	return (dst);
 }

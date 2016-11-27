@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:52:47 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/25 17:02:58 by paperrin         ###   ########.fr       */
+/*   Updated: 2016/11/27 15:57:46 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <wchar.h>
 
 # define ABS(Value) (Value >= 0 ? Value : -Value)
 
@@ -29,8 +30,11 @@ void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
+wchar_t			*ft_wstrcpy(wchar_t *dst, const wchar_t *src);
 char			*ft_strdup(const char *s1);
+wchar_t			*ft_wstrdup(const wchar_t *s1);
 size_t			ft_strlen(const char *s);
+size_t			ft_wstrlen(const wchar_t *s);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memrevcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -67,18 +71,26 @@ int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
+wchar_t			*ft_wstrjoin(wchar_t const *s1, wchar_t const *s2);
+char			*ft_strjoin_free(char **a, char **b, int free);
+wchar_t			*ft_wstrjoin_free(wchar_t **a, wchar_t **b, int free);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);
+void			ft_putwchar(wchar_t c);
+void			ft_putnchar(char c, size_t n);
 void			ft_putstr(char const *s);
+void			ft_putwstr(wchar_t const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-void			ft_putchar_fd(char c, int fd);
+void			ft_putwchar_fd(wchar_t c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
+void			ft_putwstr_fd(wchar_t const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstnew(void *content, size_t content_size);
+t_list			*ft_lstnew_cpy(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);

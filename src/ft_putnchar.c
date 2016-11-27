@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 13:50:20 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/26 19:18:28 by paperrin         ###   ########.fr       */
+/*   Created: 2016/11/26 18:14:24 by paperrin          #+#    #+#             */
+/*   Updated: 2016/11/26 18:16:51 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_putstr(char const *s)
+void	ft_putnchar(char c, size_t n)
 {
-	ft_putstr_fd(s, 1);
+	while (n-- > 0)
+		write(1, &c, 1);
 }

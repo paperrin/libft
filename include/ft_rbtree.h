@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 13:42:06 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/25 16:53:00 by paperrin         ###   ########.fr       */
+/*   Updated: 2016/11/26 20:04:40 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,30 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include "libft.h"
+
+# define RBTREE_COLOR_NULL			L"\e[35m"
+# define RBTREE_COLOR_BRANCH		L"\e[30m"
+# define RBTREE_COLOR_NODE_RED 		L"\e[37m\e[41m"
+# define RBTREE_COLOR_NODE_BLACK	L"\e[37m\e[40m"
+# define RBTREE_COLOR_NODE_RESET	L"\e[47m"
+# define RBTREE_COLOR_GLOBAL_BASE	L"\e[47m\e[30m"
+# define RBTREE_COLOR_GLOBAL_RESET	L"\e[0m"
+# define RBTREE_BRANCH_VERTICAL		L'|'
+# define RBTREE_BRANCH_CROSS		L'├'
+# define RBTREE_BRANCH_CORNER		L'└'
+# define RBTREE_BRANCH_HORIZONTAL	L'─'
+# define RBTREE_BRANCH_SPACE		L' '
+# define RBTREE_BRANCH_WIDTH		2
+# define RBTREE_BRANCH_HEIGHT		1
+
+typedef enum		e_rbtree_branch
+{
+	rbtree_branch_cross,
+	rbtree_branch_corner,
+	rbtree_branch_vertical,
+	rbtree_branch_space
+}					t_rbtree_branch;
 
 typedef enum		e_rbtree_color
 {
@@ -42,5 +66,7 @@ typedef struct		s_rbtree
 t_rbtree			ft_rbtree_new(int (*cmp_f)(void*, void*));
 t_rbtree_node		*ft_rbtree_add(t_rbtree *tree, void *content
 		, size_t content_size);
+void				ft_rbtree_print(t_rbtree *tree
+		, void (*to_string)(void *data));
 
 #endif

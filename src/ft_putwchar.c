@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putwchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 13:50:20 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/26 19:18:28 by paperrin         ###   ########.fr       */
+/*   Created: 2016/11/26 19:17:08 by paperrin          #+#    #+#             */
+/*   Updated: 2016/11/26 19:57:59 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <wchar.h>
 
-void	ft_putstr(char const *s)
+void	ft_putwchar(wchar_t c)
 {
-	ft_putstr_fd(s, 1);
+	ft_putwchar_fd(c, 1);
 }

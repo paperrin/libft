@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2016/11/25 17:06:29 by paperrin         ###   ########.fr        #
+#    Updated: 2016/11/26 19:45:48 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,11 @@ CFILES		=	ft_swap.c			\
 				ft_memchr.c			\
 				ft_memcmp.c			\
 				ft_strlen.c			\
+				ft_wstrlen.c		\
 				ft_strdup.c			\
+				ft_wstrdup.c		\
 				ft_strcpy.c			\
+				ft_wstrcpy.c		\
 				ft_strncpy.c		\
 				ft_strcat.c			\
 				ft_strncat.c		\
@@ -67,15 +70,23 @@ CFILES		=	ft_swap.c			\
 				ft_strnequ.c		\
 				ft_strsub.c			\
 				ft_strjoin.c		\
+				ft_wstrjoin.c		\
+				ft_strjoin_free.c	\
+				ft_wstrjoin_free.c	\
 				ft_strtrim.c		\
 				ft_strsplit.c		\
 				ft_itoa.c			\
 				ft_putchar.c		\
+				ft_putwchar.c		\
+				ft_putnchar.c		\
 				ft_putstr.c			\
+				ft_putwstr.c		\
 				ft_putendl.c		\
 				ft_putnbr.c			\
 				ft_putchar_fd.c		\
+				ft_putwchar_fd.c	\
 				ft_putstr_fd.c		\
+				ft_putwstr_fd.c		\
 				ft_putendl_fd.c		\
 				ft_putnbr_fd.c		\
 				ft_lstnew.c			\
@@ -92,6 +103,7 @@ CFILES		=	ft_swap.c			\
 				ft_sqrt.c			\
 				ft_rbtree_new.c		\
 				ft_rbtree_add.c		\
+				ft_rbtree_print.c	\
 				ft_hash_string.c
 
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
