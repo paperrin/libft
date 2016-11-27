@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2016/11/26 19:45:48 by paperrin         ###   ########.fr        #
+#    Updated: 2016/11/27 17:41:52 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,7 +104,8 @@ CFILES		=	ft_swap.c			\
 				ft_rbtree_new.c		\
 				ft_rbtree_add.c		\
 				ft_rbtree_print.c	\
-				ft_hash_string.c
+				ft_hash_string.c	\
+				ft_wchar.c
 
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
 

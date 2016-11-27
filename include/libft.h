@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:52:47 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/27 15:57:46 by paperrin         ###   ########.fr       */
+/*   Updated: 2016/11/27 17:42:20 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void			ft_putstr(char const *s);
 void			ft_putwstr(wchar_t const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
+void			ft_putchar_fd(char c, int fd);
 void			ft_putwchar_fd(wchar_t c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putwstr_fd(wchar_t const *s, int fd);
@@ -105,5 +106,8 @@ void			ft_lstpush(t_list **list, t_list *elem);
 int				ft_get_next_line(const int fd, char **line);
 int				ft_near_sqrt(int nb);
 int				ft_sqrt(int nb);
+size_t			ft_wchar_len(wchar_t c);
+char			ft_wchar_char_at(wchar_t c, size_t index);
+
 
 #endif
