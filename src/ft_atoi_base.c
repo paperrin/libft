@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 15:02:18 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/02 18:58:55 by paperrin         ###   ########.fr       */
+/*   Created: 2017/08/02 18:26:42 by paperrin          #+#    #+#             */
+/*   Updated: 2017/08/02 20:40:14 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,16 @@ static int		is_whitespace(char c)
 			|| c == '\v' || c == '\f' || c == '\r');
 }
 
-int				ft_atoi(const char *str)
+static int		is_char_in_base(char c, int base)
+{
+	if (base >= 2 && base <= 10)
+		return (c >= '0' && c <= '1' + base - 1);
+	else if (base > 10 && base <= 36)
+		return ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'a' + base - 11));
+	return (0);
+}
+
+int				ft_atoi_base(const char *str, int base)
 {
 	char	*p;
 	int		mult;
@@ -28,17 +37,17 @@ int				ft_atoi(const char *str)
 	while (is_whitespace(*p))
 		p++;
 	mult = 1;
-	if (*p == '-' || *p == '+')
+	if (base == 10 && (*p == '-' || *p == '+'))
 	{
 		if (*p == '-')
 			mult = -1;
 		p++;
 	}
 	ret = 0;
-	while (*p >= '0' && *p <= '9')
+	while (is_char_in_base(ft_tolower(*p), base))
 	{
-		ret *= 10;
-		ret += *p - '0';
+		ret *= base;
+		ret += (*p > '9') ? (ft_tolower(*p) - 'a' + 10) : (*p - '0');
 		p++;
 	}
 	ret *= mult;

@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 14:23:41 by paperrin          #+#    #+#             */
-/*   Updated: 2017/03/27 17:44:16 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/02 20:43:26 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,21 @@ t_vec3f			*ft_vec3f_new(float x, float y, float z)
 	return (ret);
 }
 
-static float	cross_multiply(t_vec3f const * const vec, t_matrix const * const mx, int line)
+static float	cross_multiply(t_vec3f const *const vec
+		, t_matrix const *const mx, int line)
 {
 	float	ret;
 	int		off;
 
 	off = line * MATH_MX_SIZE;
-	ret = mx->m[off] * vec->x + mx->m[off + 1] * vec->y + mx->m[off + 2] * vec->z;
+	ret = mx->m[off] * vec->x + mx->m[off + 1]
+		* vec->y + mx->m[off + 2] * vec->z;
 	ret += mx->m[off + 3];
 	return (ret);
 }
 
-t_vec3f			ft_vec3f_transform(
-		t_vec3f const * const vec
-		, t_matrix const * const mx)
+t_vec3f			ft_vec3f_transform(t_vec3f const *const vec
+		, t_matrix const *const mx)
 {
 	t_vec3f		ret;
 	int			w;

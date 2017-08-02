@@ -6,14 +6,14 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:48:16 by paperrin          #+#    #+#             */
-/*   Updated: 2017/03/27 15:49:00 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/02 20:41:01 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 #include <stdlib.h>
 
-t_matrix	*ft_matrix_new()
+t_matrix	*ft_matrix_new(void)
 {
 	t_matrix	*ret;
 
@@ -21,7 +21,7 @@ t_matrix	*ft_matrix_new()
 	return (ret);
 }
 
-void		ft_matrix_to_identity(t_matrix * const mx)
+void		ft_matrix_to_identity(t_matrix *const mx)
 {
 	int		i;
 
@@ -33,7 +33,7 @@ void		ft_matrix_to_identity(t_matrix * const mx)
 	}
 }
 
-t_matrix	*ft_matrix_copy(t_matrix *dst, t_matrix const * const src)
+t_matrix	*ft_matrix_copy(t_matrix *dst, t_matrix const *const src)
 {
 	int		i;
 

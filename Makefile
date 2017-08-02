@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2017/07/30 13:32:06 by paperrin         ###   ########.fr        #
+#    Updated: 2017/08/02 18:58:08 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ CFILES		=	ft_swap.c			\
 				ft_strcmp.c			\
 				ft_strncmp.c		\
 				ft_atoi.c			\
+				ft_atoi_base.c		\
 				ft_isalpha.c		\
 				ft_isdigit.c		\
 				ft_isalnum.c		\
