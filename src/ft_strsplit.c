@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 12:08:46 by paperrin          #+#    #+#             */
-/*   Updated: 2016/11/12 15:29:24 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/03 22:41:58 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,20 @@ static char		**alloc_tab(char const *s, char c)
 	return (tab);
 }
 
-static char		**free_tab(char **tab)
+char			**ft_strsplit_free(char **tab)
 {
 	int		tab_i;
 
 	tab_i = 0;
-	while (tab[tab_i])
-		free(tab[tab_i++]);
-	free(tab);
+	if (tab)
+	{
+		while (tab[tab_i])
+		{
+			if (tab[tab_i])
+				free(tab[tab_i++]);
+		}
+		free(tab);
+	}
 	return (NULL);
 }
 
@@ -65,7 +71,7 @@ char			**ft_strsplit(char const *s, char c)
 			break ;
 		tab[tab_i] = ft_strsub(s, 0, i);
 		if (!tab[tab_i])
-			return (free_tab(tab));
+			return (ft_strsplit_free(tab));
 		tab_i++;
 		s += i;
 	}

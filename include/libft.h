@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:52:47 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/02 18:57:37 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/03 22:41:59 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ wchar_t			*ft_wstrjoin(wchar_t const *s1, wchar_t const *s2);
 wchar_t			*ft_wstrjoin_free(wchar_t **a, wchar_t **b, int free);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+char			**ft_strsplit_free(char **tab);
 char			*ft_itoa(intmax_t nb);
 char			*ft_uitoa(uintmax_t nb);
 char			*ft_itoa_base(intmax_t nb, unsigned int base);
