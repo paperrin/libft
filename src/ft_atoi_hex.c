@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*   ft_atoi_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/02 18:26:42 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/06 00:04:24 by paperrin         ###   ########.fr       */
+/*   Created: 2017/08/05 23:17:26 by paperrin          #+#    #+#             */
+/*   Updated: 2017/08/06 00:15:41 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,24 @@ static int		is_char_in_base(char c, int base)
 	return (0);
 }
 
-int				ft_atoi_base(const char *str, int base)
+int				ft_atoi_hex_is_valid(const char *str)
 {
 	char	*p;
-	int		mult;
-	int		ret;
 
 	p = (char*)str;
 	while (is_whitespace(*p))
 		p++;
-	mult = 1;
-	if (base == 10 && (*p == '-' || *p == '+'))
-	{
-		if (*p == '-')
-			mult = -1;
-		p++;
-	}
-	ret = 0;
-	while (is_char_in_base(ft_tolower(*p), base))
-	{
-		ret *= base;
-		ret += (*p > '9') ? (ft_tolower(*p) - 'a' + 10) : (*p - '0');
-		p++;
-	}
-	ret *= mult;
-	return (ret);
+	if (p[0] && p[1] && !ft_strncmp(p, "0x", 2) && is_char_in_base(p[2], 16))
+		return (p - str + 2);
+	return (0);
+}
+
+int				ft_atoi_hex(const char *str)
+{
+	int		index;
+
+	index = ft_atoi_hex_is_valid(str);
+	if (index)
+		return (ft_atoi_base(str + index, 16));
+	return (0);
 }
