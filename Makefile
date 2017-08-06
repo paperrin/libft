@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2017/08/05 23:51:08 by paperrin         ###   ########.fr        #
+#    Updated: 2017/08/06 17:44:02 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,6 +122,7 @@ CFILES		=	ft_swap.c			\
 				ft_hash_string.c	\
 				ft_wchar.c			\
 				math/ft_vec3f.c				\
+				math/ft_vec3d.c				\
 				math/ft_matrix.c			\
 				math/ft_matrix_multiply.c	\
 				math/ft_matrix_translate.c	\

@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:17:25 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/02 20:39:09 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/06 17:43:41 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,17 @@
 
 typedef struct	s_vec3f
 {
-	float x;
-	float y;
-	float z;
+	float	x;
+	float	y;
+	float	z;
 }				t_vec3f;
+
+typedef struct	s_vec3d
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_vec3d;
 
 typedef struct	s_matrix
 {
@@ -48,5 +55,8 @@ t_vec3f			ft_vec3f(float x, float y, float z);
 t_vec3f			*ft_vec3f_new(float x, float y, float z);
 t_vec3f			ft_vec3f_transform(t_vec3f const *const vec
 		, t_matrix const *const mx);
+
+t_vec3d			ft_vec3d(double x, double y, double z);
+t_vec3d			*ft_vec3d_new(double x, double y, double z);
 
 #endif
