@@ -123,6 +123,7 @@ CFILES		=	ft_swap.c			\
 				ft_wchar.c			\
 				math/ft_vec3f.c				\
 				math/ft_vec3d.c				\
+				math/ft_vec3ld.c			\
 				math/ft_matrix.c			\
 				math/ft_matrix_multiply.c	\
 				math/ft_matrix_translate.c	\

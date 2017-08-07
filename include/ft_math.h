@@ -34,6 +34,13 @@ typedef struct	s_vec3d
 	double	z;
 }				t_vec3d;
 
+typedef struct	s_vec3ld
+{
+	long double		x;
+	long double		y;
+	long double		z;
+}				t_vec3ld;
+
 typedef struct	s_matrix
 {
 	float	m[MATH_MX_SIZE * MATH_MX_SIZE];
@@ -58,5 +65,8 @@ t_vec3f			ft_vec3f_transform(t_vec3f const *const vec
 
 t_vec3d			ft_vec3d(double x, double y, double z);
 t_vec3d			*ft_vec3d_new(double x, double y, double z);
+
+t_vec3ld		ft_vec3ld(long double x, long double y, long double z);
+t_vec3ld		*ft_vec3ld_new(long double x, long double y, long double z);
 
 #endif
