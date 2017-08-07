@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:17:25 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/06 17:43:41 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/08/07 19:02:01 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # define MATH_MX_SIZE 4
 # define MATH_TO_RAD(deg) (deg * M_PI / 180)
 # define MATH_TO_DEG(rad) (rad * 180 / M_PI)
+
+typedef struct	s_vec2i
+{
+	int		x;
+	int		y;
+}				t_vec2i;
 
 typedef struct	s_vec3f
 {
@@ -68,5 +74,8 @@ t_vec3d			*ft_vec3d_new(double x, double y, double z);
 
 t_vec3ld		ft_vec3ld(long double x, long double y, long double z);
 t_vec3ld		*ft_vec3ld_new(long double x, long double y, long double z);
+
+t_vec2i			ft_vec2i(int x, int y);
+t_vec2i			*ft_vec2i_new(int x, int y);
 
 #endif

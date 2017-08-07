@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2017/08/06 17:44:02 by paperrin         ###   ########.fr        #
+#    Updated: 2017/08/07 21:01:34 by paperrin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,6 +121,11 @@ CFILES		=	ft_swap.c			\
 				ft_rbtree_print.c	\
 				ft_hash_string.c	\
 				ft_wchar.c			\
+				ft_color_rgb.c			\
+				ft_color_hsv.c			\
+				ft_color_hsl.c			\
+				ft_color_hsv_to_rgb.c	\
+				math/ft_vec2i.c				\
 				math/ft_vec3f.c				\
 				math/ft_vec3d.c				\
 				math/ft_vec3ld.c			\
@@ -146,6 +151,14 @@ CFILES		=	ft_swap.c			\
 				printf/ft_dprintf.c					\
 				printf/ft_printf.c
 
+HFILES		=	./include/ft_color.h					\
+				./include/ft_get_next_line.h			\
+				./include/ft_hash.h						\
+				./include/ft_math.h						\
+				./include/ft_printf.h					\
+				./include/ft_rbtree.h					\
+				./include/libft.h
+
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
 
 OBJ			=	$(CFILES:%.c=$(OBJ_DIR)%.o)
@@ -154,7 +167,7 @@ OBJ			=	$(CFILES:%.c=$(OBJ_DIR)%.o)
 
 all				:	$(NAME)
 
-$(NAME)			:	$(OBJ)
+$(NAME)			:	$(OBJ) $(HFILES)
 					ar rc $(NAME) $(OBJ)
 					ranlib $(NAME)
 

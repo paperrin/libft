@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec3d.c                                         :+:      :+:    :+:   */
+/*   ft_color_rgb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/06 17:41:28 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/07 18:58:57 by paperrin         ###   ########.fr       */
+/*   Created: 2017/08/07 20:08:06 by paperrin          #+#    #+#             */
+/*   Updated: 2017/08/07 20:14:04 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
-#include <stdlib.h>
+#include "ft_color.h"
 
-t_vec3d			ft_vec3d(double x, double y, double z)
+t_color_rgb		ft_color_rgb(unsigned char r, unsigned char g
+		, unsigned char b)
 {
-	t_vec3d		ret;
-
-	ret = (t_vec3d){
-		.x = x,
-		.y = y,
-		.z = z
-	};
-	return (ret);
-}
-
-t_vec3d			*ft_vec3d_new(double x, double y, double z)
-{
-	t_vec3d		*ret;
-
-	ret = (t_vec3d*)malloc(sizeof(t_vec3d));
-	if (ret)
-		*ret = ft_vec3d(x, y, z);
-	return (ret);
+	return ((t_color_rgb){r, g, b});
 }
