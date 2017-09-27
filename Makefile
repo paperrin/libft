@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#    Updated: 2017/08/07 21:01:34 by paperrin         ###   ########.fr        #
+#*   Updated: 2017/09/27 03:26:17 by paperrin         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,6 +126,7 @@ CFILES		=	ft_swap.c			\
 				ft_color_hsl.c			\
 				ft_color_hsv_to_rgb.c	\
 				math/ft_vec2i.c				\
+				math/ft_vec2f.c				\
 				math/ft_vec3f.c				\
 				math/ft_vec3d.c				\
 				math/ft_vec3ld.c			\
@@ -149,7 +150,12 @@ CFILES		=	ft_swap.c			\
 				printf/ft_snprintf.c				\
 				printf/ft_asprintf.c				\
 				printf/ft_dprintf.c					\
-				printf/ft_printf.c
+				printf/ft_printf.c					\
+				array/ft_array_init.c				\
+				array/ft_array_reserve.c			\
+				array/ft_array_add.c				\
+				array/ft_array_push_front.c			\
+				array/ft_array_push_back.c
 
 HFILES		=	./include/ft_color.h					\
 				./include/ft_get_next_line.h			\
@@ -157,6 +163,7 @@ HFILES		=	./include/ft_color.h					\
 				./include/ft_math.h						\
 				./include/ft_printf.h					\
 				./include/ft_rbtree.h					\
+				./include/ft_array.h					\
 				./include/libft.h
 
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
@@ -173,6 +180,7 @@ $(NAME)			:	$(OBJ) $(HFILES)
 
 $(OBJ_DIR)%.o	:	$(SRC_DIR)%.c
 					@mkdir -p $(OBJ_DIR)math
+					@mkdir -p $(OBJ_DIR)array
 					@mkdir -p $(OBJ_DIR)printf
 					gcc $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 

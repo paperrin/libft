@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:17:25 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/07 19:02:01 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/27 02:38:20 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "libft.h"
 # include <math.h>
+
+# define MAX(A, B) ((A) > (B) ? (A) : (B))
+# define MIN(A, B) ((A) < (B) ? (A) : (B))
 
 # define MATH_MX_SIZE 4
 # define MATH_TO_RAD(deg) (deg * M_PI / 180)
@@ -25,6 +28,12 @@ typedef struct	s_vec2i
 	int		x;
 	int		y;
 }				t_vec2i;
+
+typedef struct	s_vec2f
+{
+	float	x;
+	float	y;
+}				t_vec2f;
 
 typedef struct	s_vec3f
 {
@@ -77,5 +86,8 @@ t_vec3ld		*ft_vec3ld_new(long double x, long double y, long double z);
 
 t_vec2i			ft_vec2i(int x, int y);
 t_vec2i			*ft_vec2i_new(int x, int y);
+
+t_vec2f			ft_vec2f(float x, float y);
+t_vec2f			*ft_vec2f_new(float x, float y);
 
 #endif
