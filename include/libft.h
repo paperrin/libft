@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:52:47 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/05 23:29:36 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/30 03:37:47 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <wchar.h>
 # include <stdint.h>
 
-# define ABS(Value) (Value >= 0 ? Value : -Value)
+# define ABS(Value) ((Value) >= 0 ? (Value) : -(Value))
 
 # define STRJOIN_FREE_S1 0
 # define STRJOIN_FREE_S2 1

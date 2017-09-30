@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 22:33:08 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/30 03:04:47 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/30 04:36:28 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ static void		fill_line(t_edge **pair, int y
 	x = pair[0]->x;
 	while (x <= pair[1]->x)
 	{
-		(*f_put_pixel)(ft_vec3f(x, y, 0), ft_color_rgb(255, 255, 255)
+		(*f_put_pixel)(ft_vec3f(x, y, 0)
+			, ft_color_interpolate(pair[0]->color, pair[1]->color
+				, (float)(x - pair[0]->x) / (pair[1]->x - pair[0]->x))
 			, param);
 		x++;
 	}
 }
-#include <stdio.h>
+
 static void		increment_x(t_array *active, int y)
 {
 	t_edge	*edge;
@@ -66,7 +68,9 @@ static void		increment_x(t_array *active, int y)
 	while (++i < (int)active->size)
 	{
 		edge = active->begin[i];
-		edge->sum += ((y - edge->y_min) / edge->dy) * edge->dx;
+		edge->sum += (float)edge->dx / edge->dy;
+		edge->color = ft_color_interpolate(edge->color_min, edge->color_max
+			, (float)(y - edge->y_min) / edge->dy);
 		while (edge->sum >= 1)
 		{
 			edge->x += edge->sign;

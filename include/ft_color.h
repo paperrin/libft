@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 19:18:39 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/29 23:28:36 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/30 04:02:30 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct		s_color_hsl
 
 t_color_rgb			ft_color_rgb(unsigned char r, unsigned char g
 		, unsigned char b);
+
+t_color_rgb			ft_color_interpolate(t_color_rgb a, t_color_rgb b, float v);
 
 t_color_hsv			ft_color_hsv(unsigned short h, unsigned char s
 		, unsigned char v);
