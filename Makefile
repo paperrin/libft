@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#*   Updated: 2017/09/30 02:29:01 by paperrin         ###   ########.fr       *#
+#*   Updated: 2017/09/30 02:48:19 by paperrin         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -184,16 +184,16 @@ OBJ_SUBDIR	=	$(sort $(dir $(OBJ)))
 
 # # # # #
 
-all				:	$(NAME)
+all				:	$(OBJ_DIR) $(NAME)
 
-$(NAME)			:	subdirs $(OBJ) $(HFILES)
+$(NAME)			:	$(OBJ) $(HFILES)
 					ar rc $(NAME) $(OBJ)
 					ranlib $(NAME)
 
 $(OBJ_DIR)%.o	:	$(SRC_DIR)%.c
 					gcc $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
-subdirs			:
+$(OBJ_DIR)		:
 					mkdir -p $(OBJ_DIR)
 					mkdir -p $(OBJ_SUBDIR)
 
