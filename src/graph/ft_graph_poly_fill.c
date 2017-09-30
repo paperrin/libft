@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 22:33:08 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/30 02:49:05 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/30 03:04:47 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ static void		increment_x(t_array *active, int y)
 	t_edge	*edge;
 	int		i;
 
-		//	printf("INC\n");
 	i = -1;
 	while (++i < (int)active->size)
 	{
