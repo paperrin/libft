@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#*   Updated: 2017/09/27 03:26:17 by paperrin         ###   ########.fr       *#
+#*   Updated: 2017/09/30 02:29:01 by paperrin         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,7 +155,16 @@ CFILES		=	ft_swap.c			\
 				array/ft_array_reserve.c			\
 				array/ft_array_add.c				\
 				array/ft_array_push_front.c			\
-				array/ft_array_push_back.c
+				array/ft_array_push_back.c			\
+				array/ft_array_front.c				\
+				array/ft_array_back.c				\
+				array/ft_array_pop.c				\
+				array/ft_array_pop_front.c			\
+				array/ft_array_pop_back.c			\
+				array/ft_array_free.c				\
+				array/ft_array_sort.c				\
+				graph/ft_graph_create_edge_table.c	\
+				graph/ft_graph_poly_fill.c
 
 HFILES		=	./include/ft_color.h					\
 				./include/ft_get_next_line.h			\
@@ -164,25 +173,29 @@ HFILES		=	./include/ft_color.h					\
 				./include/ft_printf.h					\
 				./include/ft_rbtree.h					\
 				./include/ft_array.h					\
+				./include/ft_graph.h					\
 				./include/libft.h
 
 SRC			=	$(CFILES:%=$(SRC_DIR)%)
 
 OBJ			=	$(CFILES:%.c=$(OBJ_DIR)%.o)
 
+OBJ_SUBDIR	=	$(sort $(dir $(OBJ)))
+
 # # # # #
 
 all				:	$(NAME)
 
-$(NAME)			:	$(OBJ) $(HFILES)
+$(NAME)			:	subdirs $(OBJ) $(HFILES)
 					ar rc $(NAME) $(OBJ)
 					ranlib $(NAME)
 
 $(OBJ_DIR)%.o	:	$(SRC_DIR)%.c
-					@mkdir -p $(OBJ_DIR)math
-					@mkdir -p $(OBJ_DIR)array
-					@mkdir -p $(OBJ_DIR)printf
 					gcc $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+
+subdirs			:
+					mkdir -p $(OBJ_DIR)
+					mkdir -p $(OBJ_SUBDIR)
 
 clean			:
 						$(RM) $(OBJ_DIR)
@@ -206,4 +219,4 @@ norm			:
 	@echo "\x1b[0m\x1b[35m\c"
 	@echo ".___________________________________________________.\n\x1b[0m"
 
-.PHONY : all, test, clean, fclean, re, norm
+.PHONY : all, test, subdirs, clean, fclean, re, norm

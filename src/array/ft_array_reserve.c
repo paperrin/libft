@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 01:04:59 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/27 03:48:57 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/29 17:30:59 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void		set_new_meta(t_array *old, t_array *new
 {
 	*new = (t_array){
 		.data = new->data,
-		.begin = new->data + reserve_front,
-		.end = new->data + reserve_front + old->size,
+		.begin = &new->data[reserve_front],
+		.end = &new->data[reserve_front + old->size - 1],
 		.f_free = old->f_free,
 		.size = old->size,
 		.reserve_front = reserve_front,
@@ -48,7 +48,7 @@ t_array_it		ft_array_reserve(t_array *array
 		new.data[new.reserve_front + i] = array->data[array->reserve_front + i];
 		i++;
 	}
-	//ft_array_free(array);
+	ft_array_free(array);
 	*array = new;
 	return (array->begin);
 }

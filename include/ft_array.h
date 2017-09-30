@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/26 18:29:53 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/27 03:56:16 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/09/29 23:49:39 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,21 @@ typedef struct		s_array
 }					t_array;
 
 t_array				ft_array_init(void (*f_free)(void*));
-void				ft_array_free(t_array *array); // TODO
+void				ft_array_free(t_array *array);
 
 t_array_it			ft_array_add(t_array *array, size_t index, void *elem);
-t_array_it			ft_array_remove(t_array *array, size_t index); // TODO
 
 t_array_it			ft_array_push_front(t_array *array, void *data);
 t_array_it			ft_array_push_back(t_array *array, void *data);
 
-void				*ft_array_front(t_array *array); // TODO
-void				*ft_array_back(t_array *array); // TODO
+void				*ft_array_front(t_array *array);
+void				*ft_array_back(t_array *array);
 
-void				*ft_array_pop_front(t_array *array); // TODO
-void				*ft_array_pop_back(t_array *array); // TODO
+void				*ft_array_pop(t_array *array, size_t index);
+void				*ft_array_pop_front(t_array *array);
+void				*ft_array_pop_back(t_array *array);
+
+t_array_it			ft_array_sort(t_array *array, int f_cmp(void*, void*));
 
 t_array_it			ft_array_reserve(t_array *array
 						, size_t reserve_front, size_t reserve_back);

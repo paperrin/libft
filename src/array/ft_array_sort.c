@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array_init.c                                    :+:      :+:    :+:   */
+/*   ft_array_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/26 22:37:34 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/29 17:30:40 by paperrin         ###   ########.fr       */
+/*   Created: 2017/09/29 21:30:37 by paperrin          #+#    #+#             */
+/*   Updated: 2017/09/29 23:52:05 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_array.h"
 
-t_array				ft_array_init(void (*f_free)(void*))
+t_array_it			ft_array_sort(t_array *array, int (*f_cmp)(void*, void*))
 {
-	t_array		array;
+	int		sorted;
+	int		i;
 
-	array = (t_array){
-		.data = NULL,
-		.begin = NULL,
-		.end = NULL,
-		.f_free = f_free,
-		.size = 0,
-		.reserve_front = 0,
-		.reserve_back = 0
-	};
-	return (array);
+	if (!array->data)
+		return (NULL);
+	sorted = 0;
+	while (!sorted)
+	{
+		sorted = 1;
+		i = -1;
+		while (++i < (int)array->size - 1)
+		{
+			if (!f_cmp(array->begin[i], array->begin[i + 1]))
+			{
+				sorted = 0;
+				ft_swap(&array->begin[i], &array->begin[i + 1]);
+			}
+		}
+	}
+	return (array->begin);
 }

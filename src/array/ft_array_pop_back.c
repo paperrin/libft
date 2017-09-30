@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_color_rgb.c                                     :+:      :+:    :+:   */
+/*   ft_array_pop_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/07 20:08:06 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/29 23:28:34 by paperrin         ###   ########.fr       */
+/*   Created: 2017/09/29 16:48:20 by paperrin          #+#    #+#             */
+/*   Updated: 2017/09/29 17:30:32 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_color.h"
+#include "ft_array.h"
 
-t_color_rgb		ft_color_rgb(unsigned char r, unsigned char g
-		, unsigned char b)
+void				*ft_array_pop_back(t_array *array)
 {
-	return ((t_color_rgb){r, g, b});
+	return (ft_array_pop(array, array->size - 1));
 }
