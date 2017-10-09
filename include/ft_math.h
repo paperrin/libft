@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:17:25 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/27 02:38:20 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/09 03:49:25 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ t_vec3ld		*ft_vec3ld_new(long double x, long double y, long double z);
 
 t_vec2i			ft_vec2i(int x, int y);
 t_vec2i			*ft_vec2i_new(int x, int y);
+t_vec2i			ft_vec2i_transform(t_vec2i const *const vec
+		, t_matrix const *const mx);
 
 t_vec2f			ft_vec2f(float x, float y);
 t_vec2f			*ft_vec2f_new(float x, float y);

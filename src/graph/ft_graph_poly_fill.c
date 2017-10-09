@@ -6,11 +6,12 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 22:33:08 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/30 04:36:28 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/07 03:43:57 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_graph.h"
+#include <stdio.h>
 
 static int		x_smaller(void *a, void *b)
 {
@@ -49,7 +50,7 @@ static void		fill_line(t_edge **pair, int y
 	int				x;
 
 	x = pair[0]->x;
-	while (x <= pair[1]->x)
+	while (x < pair[1]->x)
 	{
 		(*f_put_pixel)(ft_vec3f(x, y, 0)
 			, ft_color_interpolate(pair[0]->color, pair[1]->color
@@ -88,7 +89,7 @@ int				ft_graph_poly_fill(t_array *edges
 	int			i;
 
 	active = ft_array_init(NULL);
-	if (!ft_array_reserve(&active, 0, edges->size))
+	if (!edges || !ft_array_reserve(&active, 0, edges->size))
 		return (0);
 	y = ((t_edge*)edges->begin[0])->y_min;
 	while (edges->size)

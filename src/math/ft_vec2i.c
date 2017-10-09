@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 18:56:33 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/07 18:58:53 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/09 03:48:58 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,14 @@ t_vec2i			*ft_vec2i_new(int x, int y)
 	if (ret)
 		*ret = ft_vec2i(x, y);
 	return (ret);
+}
+
+t_vec2i			ft_vec2i_transform(t_vec2i const *const vec
+		, t_matrix const *const mx)
+{
+	t_vec3f		tmp;
+
+	tmp = ft_vec3f(vec->x, vec->y, 1);
+	tmp = ft_vec3f_transform(&tmp, mx);
+	return (ft_vec2i(round(tmp.x), round(tmp.y)));
 }

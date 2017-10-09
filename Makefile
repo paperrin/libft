@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#*   Updated: 2017/09/30 02:48:19 by paperrin         ###   ########.fr       *#
+#*   Updated: 2017/10/09 02:36:35 by paperrin         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -164,7 +164,13 @@ CFILES		=	ft_swap.c			\
 				array/ft_array_free.c				\
 				array/ft_array_sort.c				\
 				graph/ft_graph_create_edge_table.c	\
-				graph/ft_graph_poly_fill.c
+				graph/ft_graph_poly_fill.c			\
+				graph/ft_graph_env_rect.c			\
+				graph/ft_graph_env_aaline.c			\
+				graph/ft_graph_transform.c			\
+				graph/ft_graph_env_init.c			\
+				graph/ft_graph_push.c				\
+				graph/ft_graph_pop.c
 
 HFILES		=	./include/ft_color.h					\
 				./include/ft_get_next_line.h			\
