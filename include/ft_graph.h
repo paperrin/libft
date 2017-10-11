@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 18:57:00 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/09 03:17:53 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/11 18:04:28 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,26 @@ typedef struct		s_edge
 
 typedef struct		s_graph_env
 {
-	t_array		matrices;
+	t_array			matrices;
 	void (*f_put_pixel)(t_vec3f pos, t_color_rgb color, void *param);
-	void		*put_pixel_param;
+	void (*f_put_pixel_rgba)(t_vec3f pos, t_color_rgba color, void *param);
+	void			*put_pixel_param;
+	t_color_rgba	fill_rgba;
+	t_vec2i			screen_size;
 }					t_graph_env;
+
+typedef struct		s_graph_aaline
+{
+	t_vec2i			a;
+	t_vec2i			b;
+	t_vec2i			c;
+	t_vec2i			d;
+	t_vec2i			s;
+	int				err;
+	int				err2;
+	int				w;
+	float			ed;
+}					t_graph_aaline;
 
 t_array			*ft_graph_create_edge_table(t_vec3f *vertices
 	, t_color_rgb *colors, size_t n);
@@ -46,6 +62,7 @@ int				ft_graph_poly_fill(t_array *edges
 
 int				ft_graph_env_init(t_graph_env *env
 	, void (*f_put_pixel)(t_vec3f pos, t_color_rgb color, void *param)
+	, void (*f_put_pixel_rgba)(t_vec3f pos, t_color_rgba color, void *param)
 	, void *put_pixel_param);
 int				ft_graph_push(t_graph_env *env);
 void			ft_graph_pop(t_graph_env *env);

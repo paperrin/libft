@@ -6,7 +6,7 @@
 #    By: paperrin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 12:00:36 by paperrin          #+#    #+#              #
-#*   Updated: 2017/10/09 02:36:35 by paperrin         ###   ########.fr       *#
+#*   Updated: 2017/10/11 17:11:57 by paperrin         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,9 +122,11 @@ CFILES		=	ft_swap.c			\
 				ft_hash_string.c	\
 				ft_wchar.c			\
 				ft_color_rgb.c			\
+				ft_color_rgba.c			\
 				ft_color_hsv.c			\
 				ft_color_hsl.c			\
 				ft_color_hsv_to_rgb.c	\
+				ft_lerp.c				\
 				math/ft_vec2i.c				\
 				math/ft_vec2f.c				\
 				math/ft_vec3f.c				\

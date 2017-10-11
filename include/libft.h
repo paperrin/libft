@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:52:47 by paperrin          #+#    #+#             */
-/*   Updated: 2017/09/30 03:37:47 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/11 17:15:26 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,5 +154,6 @@ int				ft_near_sqrt(int nb);
 int				ft_sqrt(int nb);
 size_t			ft_wchar_len(wchar_t c);
 char			ft_wchar_char_at(wchar_t c, size_t index);
+intmax_t		ft_lerp(intmax_t val, intmax_t min, intmax_t max);
 
 #endif
