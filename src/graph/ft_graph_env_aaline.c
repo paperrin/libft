@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/09 02:36:07 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/11 14:07:09 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/16 12:44:09 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int		step_x(t_graph_env *env, t_graph_aaline *l)
 	{
 		l->err2 += l->d.y;
 		l->c.y = l->a.y;
-		while (l->err2 < l->ed * l->w && (l->b.y != l->c.y || l->d.x > l->d.y))
+		while (l->err2 <= l->ed * l->w && (l->b.y != l->c.y || l->d.x > l->d.y))
 		{
 			l->c.y += l->s.y;
 			plot(env, l->a.x, l->c.y, abs(l->err2) / l->ed - l->w + 1);
@@ -95,9 +95,10 @@ void			ft_graph_env_aaline(t_graph_env *env, t_vec2i a, t_vec2i b
 {
 	t_matrix	*mx;
 
+	if (width < 1)
+		width = 1;
 	mx = (t_matrix*)ft_array_back(&env->matrices);
 	a = ft_vec2i_transform(&a, mx);
 	b = ft_vec2i_transform(&b, mx);
 	draw_line(env, b, a, width);
-	draw_line(env, a, b, width);
 }
