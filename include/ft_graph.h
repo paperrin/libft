@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 18:57:00 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/11 18:04:28 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/19 16:46:22 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int				ft_graph_poly_fill(t_array *edges
 	, void (*f_put_pixel)(t_vec3f pos, t_color_rgb color, void *param)
 	, void *param);
 
-int				ft_graph_env_init(t_graph_env *env
+int				ft_graph_env_init(t_graph_env **env
 	, void (*f_put_pixel)(t_vec3f pos, t_color_rgb color, void *param)
 	, void (*f_put_pixel_rgba)(t_vec3f pos, t_color_rgba color, void *param)
 	, void *put_pixel_param);
