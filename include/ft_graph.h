@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 18:57:00 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/19 16:46:22 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/21 19:10:49 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "ft_color.h"
 # include "ft_array.h"
 
-typedef struct		s_edge
+typedef struct	s_edge
 {
 	int				y_max;
 	int				y_min;
@@ -29,19 +29,21 @@ typedef struct		s_edge
 	int				dx;
 	int				dy;
 	float			sum;
-}					t_edge;
+}				t_edge;
 
-typedef struct		s_graph_env
+typedef struct	s_graph_env
 {
 	t_array			matrices;
-	void (*f_put_pixel)(t_vec3f pos, t_color_rgb color, void *param);
-	void (*f_put_pixel_rgba)(t_vec3f pos, t_color_rgba color, void *param);
+	void			(*f_put_pixel)(t_vec3f pos, t_color_rgb color
+			, void *param);
+	void			(*f_put_pixel_rgba)(t_vec3f pos, t_color_rgba color
+			, void *param);
 	void			*put_pixel_param;
 	t_color_rgba	fill_rgba;
 	t_vec2i			screen_size;
-}					t_graph_env;
+}				t_graph_env;
 
-typedef struct		s_graph_aaline
+typedef struct	s_graph_aaline
 {
 	t_vec2i			a;
 	t_vec2i			b;
@@ -52,7 +54,7 @@ typedef struct		s_graph_aaline
 	int				err2;
 	int				w;
 	float			ed;
-}					t_graph_aaline;
+}				t_graph_aaline;
 
 t_array			*ft_graph_create_edge_table(t_vec3f *vertices
 	, t_color_rgb *colors, size_t n);
@@ -67,7 +69,8 @@ int				ft_graph_env_init(t_graph_env **env
 int				ft_graph_push(t_graph_env *env);
 void			ft_graph_pop(t_graph_env *env);
 
-void			ft_graph_translate(t_graph_env *env, float x, float y, float z);
+void			ft_graph_translate(t_graph_env *env
+		, float x, float y, float z);
 void			ft_graph_scale(t_graph_env *env, float x, float y, float z);
 void			ft_graph_rot_x(t_graph_env *env, float alpha);
 void			ft_graph_rot_y(t_graph_env *env, float alpha);

@@ -6,12 +6,12 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 19:17:48 by paperrin          #+#    #+#             */
-/*   Updated: 2017/08/07 21:56:32 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/21 19:12:16 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_color.h"
-#include <math.h>
+
 t_color_rgb			ft_color_hsv_to_rgb(t_color_hsv hsv)
 {
 	int				region;

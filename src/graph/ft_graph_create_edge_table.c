@@ -6,7 +6,7 @@
 /*   By: paperrin <paperrin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 20:56:34 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/07 03:37:15 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/21 19:13:06 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ static int		y_min_smaller(void *a, void *b)
 	return (((t_edge*)a)->y_min <= ((t_edge*)b)->y_min);
 }
 
-t_array			*ft_graph_create_edge_table(t_vec3f *vertices, t_color_rgb *colors, size_t n)
+t_array			*ft_graph_create_edge_table(t_vec3f *vertices,
+		t_color_rgb *colors, size_t n)
 {
 	t_array		*edges;
 

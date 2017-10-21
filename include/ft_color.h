@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 19:18:39 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/11 14:33:11 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/21 19:09:04 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct		s_color_hsl
 
 t_color_rgb			ft_color_rgb(unsigned char r, unsigned char g
 		, unsigned char b);
-t_color_rgb		ft_color_rgb_add_rgba(t_color_rgb rgb, t_color_rgba rgba);
+t_color_rgb			ft_color_rgb_add_rgba(t_color_rgb rgb, t_color_rgba rgba);
 
 t_color_rgba		ft_color_rgba(unsigned char r, unsigned char g
 		, unsigned char b, float a);
