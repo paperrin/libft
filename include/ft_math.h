@@ -6,7 +6,7 @@
 /*   By: paperrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 15:17:25 by paperrin          #+#    #+#             */
-/*   Updated: 2017/10/09 03:49:25 by paperrin         ###   ########.fr       */
+/*   Updated: 2017/10/29 20:10:26 by paperrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,12 @@ t_vec2i			ft_vec2i_transform(t_vec2i const *const vec
 
 t_vec2f			ft_vec2f(float x, float y);
 t_vec2f			*ft_vec2f_new(float x, float y);
+t_vec2f			ft_vec2f_add(t_vec2f a, t_vec2f b);
+t_vec2f			ft_vec2f_sub(t_vec2f a, t_vec2f b);
+t_vec2f			ft_vec2f_mult(t_vec2f a, t_vec2f b);
+float			ft_vec2f_mag(t_vec2f vec);
+float			ft_vec2f_dot(t_vec2f a, t_vec2f b);
+t_vec2f			ft_vec2f_rot(t_vec2f vec, float angle);
+t_vec2f			ft_vec2f_scale(t_vec2f vec, float scale);
 
 #endif

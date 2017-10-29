@@ -137,6 +137,9 @@ CFILES		=	ft_swap.c			\
 				math/ft_matrix_translate.c	\
 				math/ft_matrix_rot.c		\
 				math/ft_matrix_scale.c		\
+				math/ft_vec2f_add.c			\
+				math/ft_vec2f_mag.c			\
+				math/ft_vec2f_rot_scale.c	\
 				printf/ft_printf_core.c				\
 				printf/ft_printf_parse.c			\
 				printf/ft_printf_parse_field.c		\
